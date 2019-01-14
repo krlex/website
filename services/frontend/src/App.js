@@ -11,6 +11,7 @@ import Dashboard from 'pages/dashboard'
 import Landing from 'pages/landing'
 import Login from 'pages/login'
 import NoPage from 'pages/nopage'
+import Profile from 'pages/profile'
 
 import store from 'store'
 import theme from 'theme'
@@ -29,6 +30,7 @@ export default class App extends Component {
               <Route exact path="/landing" component={Landing} />
               <Route exact path="/about" component={About} />
               <Route exact path="/login" component={Login} />
+              <Route exact path="/profile" component={Profile} />
               <Route path="*" component={NoPage} />
             </Switch>
           </BrowserRouter>
