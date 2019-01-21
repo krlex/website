@@ -8,25 +8,22 @@ import getStyles from './styles'
 
 
 @observer
-class PriceBox extends React.Component {
+class InfoBox extends React.Component {
   handleClick = () => {
-    const focused = this.props.name === store.cfs.focused
+    const focused = this.props.name === store.about.focused
       ? ''
       : this.props.name
-    store.cfs.focused = focused
+    store.about.focused = focused
   }
 
   render() {
     const styles = getStyles(this.props.backgroundColor)
-    const rootStyle = this.props.name === store.cfs.focused
-      ? styles.price.focused
-      : styles.price
+    const rootStyle = this.props.name === store.about.focused
+      ? styles.ibox.focused
+      : styles.ibox
     return (
       <Paper style={rootStyle}>
         <Toolbar onClick={this.handleClick} style={styles.toolbar}>
-          <div style={styles.title}>
-            {this.props.price}
-          </div>
           <div>
             {this.props.name}
           </div>
@@ -40,12 +37,11 @@ class PriceBox extends React.Component {
 }
 
 
-PriceBox.propTypes = {
+InfoBox.propTypes = {
   children: PropTypes.node,
   backgroundColor: PropTypes.string,
   name: PropTypes.string.isRequired,
-  price: PropTypes.string.isRequired,
 }
 
 
-export default PriceBox
+export default InfoBox

@@ -1,4 +1,4 @@
-const priceBox = {
+const infoBox = {
   width: '100%',
   margin: 5,
   textAlign: 'left',
@@ -9,11 +9,11 @@ const priceBox = {
 
 export default (backgroundColor = null) => {
   const styles = {
-    price: {
-      ...priceBox,
+    ibox: {
+      ...infoBox,
       maxHeight: 64,
       focused: {
-        ...priceBox,
+        ...infoBox,
         maxHeight: 800,
       },
     },

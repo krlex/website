@@ -1,38 +1,28 @@
 import React, { Component } from 'react'
-import { PropTypes } from 'prop-types'
-import { connect } from 'react-redux'
+import { observer } from 'mobx-react'
 import Template from 'templates/default'
-import titleActions from 'templates/default/actions'
-import errorActions from 'templates/empty/actions'
+import store from 'store'
 
 
-const mapStateToProps = () => ({})
-
-
-class Profile extends Component {
+@observer
+class Landing extends Component {
   componentWillMount() {
-    this.props.requestTitle('Profile')
+    store.title.title = 'Landing'
   }
 
   handleError = () => {
-    this.props.requestError('Profile')
+    store.error.message = 'Landing'
+    store.error.open = true
   }
 
   render() {
     return (
       <Template>
+
       </Template>
     )
   }
 }
 
 
-Profile.propTypes = {
-  requestError: PropTypes.func.isRequired,
-  requestTitle: PropTypes.func.isRequired,
-}
-
-
-export default connect(mapStateToProps, { ...errorActions, ...titleActions })(
-  Profile,
-)
+export default Landing

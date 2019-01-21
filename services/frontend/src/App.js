@@ -27,6 +27,7 @@ export default class App extends React.Component {
             <Route exact path="/landing" component={Landing} />
             <Route exact path="/about" component={About} />
             <Route exact path="/login" component={Login} />
+            <Route exact path="/profile" component={Profile} />
             <Route path="*" component={NoPage} />
           </Switch>
         </BrowserRouter>

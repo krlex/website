@@ -41,7 +41,7 @@ export default {
     padding: 20,
     display: 'grid',
     justifyContent: 'left',
-    margin: 15,
+    width: '100%',
   },
 
   sendButton: {
@@ -53,10 +53,13 @@ export default {
   },
 
   mapOSM: {
+    width: '100%',
+  },
+
+  mapForm: {
     display: 'flex',
-    justifyContent: 'left',
-    alignItems: 'left',
-    padding: 20,
-    margin: 15,
+    alignItems: 'stretch',
+    justifyContent: 'center',
+    flexDirection: 'column',
   },
 }
