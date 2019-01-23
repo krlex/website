@@ -27,6 +27,14 @@ class About extends Component {
     store.title.title = 'About'
   }
 
+  handleEmail = (event) => {
+    this.setState({ email: event.target.value });
+  }
+
+  handleMessage = (event) => {
+    this.setState({ message: event.target.value });
+  }
+
   render() {
     return (
       <Template>
