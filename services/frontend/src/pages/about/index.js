@@ -14,6 +14,7 @@ import InfoBox from 'components/organisms/info-box'
 import Typography from '@material-ui/core/Typography'
 import store from 'store'
 import styles from './styles'
+import instagram from './svg/instagram.svg'
 
 
 @observer
@@ -21,6 +22,7 @@ class About extends Component {
   state = {
     email: '',
     message: '',
+    insta: instagram,
   }
 
   componentWillMount() {
@@ -161,8 +163,13 @@ class About extends Component {
               <Public />
               Public Networks:
               <p><a href="https://facebook.com/tildacenter">Facebook</a></p>
+              <a class="twitter-share-button"
+                  href="https://twitter.com/intent/tweet?text=Hello%20world"
+                  data-size="large">
+              Tweet
+              </a>
               <p><a href="https://twitter.com/tildacenter">Twitter</a></p>
-              <p><a href="https://instagram.com/tildacenter">Instagram</a></p>
+              <img src={this.state.insta} alt="instagram" width= '50px' height='82px' href="https://instagram.com/tildacenter" />
             </Typography>
           </Paper>
         </InfoBox>

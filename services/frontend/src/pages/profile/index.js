@@ -2,9 +2,11 @@ import React, { Component } from 'react'
 import Avatar from '@material-ui/core/Avatar'
 import { observer } from 'mobx-react'
 import Template from 'templates/default'
+import Typography from '@material-ui/core/Typography'
+import Paper from '@material-ui/core/Paper'
 import store from 'store'
-import me from './me.jpeg'
 import styles from './styles'
+import me from './me.jpeg'
 
 
 @observer
@@ -28,10 +30,14 @@ class Profile extends Component {
   render() {
     return (
       <Template>
-        <div>
-          <Avatar src={this.state.Avatar} style={styles.bigAvatar} />
-          <p>{this.state.firstName} {this.state.lastName}</p>
-          <p>{this.state.email}</p>
+        <div style={styles.ProfCenter}>
+          <Paper>
+            <Avatar src={this.state.Avatar} style={styles.bigAvatar} />
+            <Typography variant="h5">
+              <p>{store.me.detail.firstName} {store.me.detail.lastName}</p>
+              <p>{store.me.detail.email}</p>
+            </Typography>
+          </Paper>
         </div>
       </Template>
     )
